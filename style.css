@@ -249,25 +249,6 @@ video {
   border: 2px solid #444; /* Borde gris oscuro */
 }
 
-.sub-container h4::after {
-  content: "";
-  position: absolute;
-  right: 16px;
-  bottom: 12px;
-  width: 160px;   /* Aumenta el ancho de la imagen */
-  height: 120px;  /* Aumenta el alto de la imagen */
-  background: url('2.jpg') no-repeat right bottom;
-  background-size: contain;
-  opacity: 0.9;
-  pointer-events: none;
-  border-radius: 8px;
-  z-index: 1;
-}
-.sub-container.no-image h4::after {
-  background: none;
-  display: none;
-}
-
 .image-container {
   background-color: #fffdfd;
   text-align-last: left; 
@@ -302,4 +283,5 @@ video {
   .imagen-chica {
     width: 100%;
   }
+
 }
