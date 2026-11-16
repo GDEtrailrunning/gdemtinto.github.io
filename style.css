@@ -133,7 +133,7 @@ p {
   max-width: 82px;
   aspect-ratio: 4 / 3;
   border-radius: 8px;
-  background-image: url("2.png");
+  background-image: url("2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -182,20 +182,58 @@ p {
 
 .image-container {
   background: #fffdfd;
-  padding: 1rem;
+  padding: 0.75rem;
   width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
   border-radius: 12px;
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.featured-video-container {
+  max-width: 430px;
+  margin: 35px auto 2rem;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
 video,
 .responsive-video {
   width: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
   display: block;
+  background: #000;
+  object-fit: contain;
+}
+
+.image-container.video-expanded {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: min(90vw, 1000px);
+  max-width: calc(100vw - 40px);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.image-container.video-expanded .responsive-video {
+  max-height: 80vh;
+}
+
+body.video-expanded-open {
+  overflow: hidden;
 }
 
 /* ===============================
@@ -264,7 +302,7 @@ audio {
   max-width: 360px;
   margin: 1.5em auto;
   padding: 1.4rem 1.2rem;
-  background: linear-gradient(135deg, #0f3d3f 0%, #16a085 100%);
+  background: linear-gradient(135deg, #a34414 0%, #cf36b3 100%);
   color: #ffffff;
   border-radius: 18px;
   border: 2px solid rgba(255,255,255,0.25);
